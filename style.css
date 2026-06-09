@@ -1,0 +1,61 @@
+/*----Gaya Dasar & Tipografi----*/
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f9;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+}
+
+/*----Mengatur Kontainer Utama (Box Model)----*/
+main, header, footer{
+    max-width: 800px; /*Lebar Max Konten*/
+    margin: 0 auto; /* Trik untuk membuat konten berada di tengah*/
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    border-bottom: 2px solid #ccc;
+    margin-bottom: 20px;
+}
+
+/*----Pewarnaan & Tipografi Judul----*/
+h1 {
+    color: rgb(232, 114, 128);
+    font-size: 2.5em; /*em adalah satuan relatif terhadap font size induk*/
+}
+
+h2 {
+    color: rgb(232, 114, 128);
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+}
+
+/*---- Membuat Gaya pada Gambar & Tautan----*/
+img {
+    display: block;/*Membuat gambar menjadi elemen blok*/
+    margin: 20px auto;/*Otomatis di tengah*/
+    max-width: 150px;
+    border-radius: 50%;/*Trik membuat gambar jadi bulat*/
+    border: 5px solid white;
+    box-shadow: 0 0 10px rgb(232, 114, 128);
+}
+
+a {
+    color: #efa8ad;
+    text-decoration: none;/*Menghilangkan garis bawah*/
+}
+
+a:hover {
+    text-decoration: underline;/*Garis bawah muncul saat kursor di atasnya*/
+}
+
+/*----Gaya untuk footer----*/
+footer {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 0.9em;
+    color: #efa8ad;
+}
