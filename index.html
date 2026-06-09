@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Pribadi | Marchella Diva Gantari</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* RESET & BASE STYLES */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            /* Background utama menggunakan pola kotak-kotak retro berwarna kuning pastel */
+            background-color: #fce4ec;
+            background-image: radial-gradient(#ff4081 1px, transparent 1px), radial-gradient(#ff4081 1px, #fce4ec 1px);
+            background-size: 40px 40px;
+            background-position: 0 0, 20px 20px;
+            color: #000000;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+        }
+
+        /* HEADER / HERO */
+        .hero-section {
+            background-color: #6c5ce7; /* Warna ungu vibrant */
+            border: 4px solid #000000;
+            padding: 50px 20px;
+            text-align: center;
+            border-radius: 16px;
+            box-shadow: 8px 8px 0px #000000; /* Bayangan tebal khas brutalism */
+            margin-bottom: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Dekorasi stiker pelengkap di header */
+        .hero-section::before {
+            content: '★ HELLO ★';
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: #ff007f;
+            color: white;
+            padding: 5px 10px;
+            font-weight: bold;
+            border: 2px solid #000;
+            transform: rotate(-5deg);
+            font-size: 0.8rem;
+        }
+
+        .hero-section h1 {
+            font-size: 3rem;
+            color: #fffdf9;
+            text-shadow: 4px 4px 0px #000;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .hero-section p {
+            display: inline-block;
+            background-color: #00ffcc; /* Warna hijau neon */
+            color: #000;
+            padding: 6px 15px;
+            font-weight: 500;
+            font-size: 1.1rem;
+            border: 3px solid #000;
+            transform: rotate(1deg);
+            box-shadow: 3px 3px 0px #000;
+        }
+
+        /* BRUTALIST CARD UNIVERSAL */
+        .brutal-card {
+            border: 4px solid #000000;
+            border-radius: 16px;
+            padding: 35px;
+            margin-bottom: 40px;
+            box-shadow: 8px 8px 0px #000000;
+            transition: all 0.2s ease;
+        }
+
+        /* Warna berbeda untuk tiap section agar penuh warna */
+        .about-section { background-color: #fffae0; } /* Kuning muda */
+        .hobby-section { background-color: #e8f5e9; } /* Hijau muda mint */
+        .gallery-section { background-color: #e0f7fa; } /* Biru muda cyan */
+
+        section h2 {
+            font-size: 2rem;
+            color: #000;
+            margin-bottom: 30px;
+            display: inline-block;
+            padding: 5px 15px;
+            border: 3px solid #000;
+            box-shadow: 4px 4px 0px #000;
+            transform: skew(-5deg);
+        }
+
+        /* ABOUT CONTENT */
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+
+        .profile-wrapper {
+            position: relative;
+        }
+
+        /* Frame foto berlapis tebal */
+        .profile-img {
+            width: 160px;
+            height: 160px;
+            object-fit: cover;
+            border: 4px solid #000000;
+            border-radius: 12px;
+            background-color: #ff007f;
+            display: block;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Kotak warna di belakang foto sebagai bayangan estetik */
+        .profile-wrapper::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: #ff5252;
+            border: 4px solid #000;
+            top: 10px;
+            left: 10px;
+            border-radius: 12px;
+            z-index: 1;
+        }
+
+        .about-text {
+            flex: 1;
+            min-width: 280px;
+            font-size: 1.1rem;
+            color: #000;
+            font-weight: 500;
+        }
+
+        .about-text strong {
+            background-color: #ff4081;
+            color: white;
+            padding: 2px 6px;
+            border: 2px solid #000;
+        }
+
+        /* HOBBY GRID STYLE */
+        .hobby-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+        }
+
+        .hobby-item {
+            border: 4px solid #000;
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 5px 5px 0px #000;
+            transition: transform 0.1s, box-shadow 0.1s;
+        }
+
+        /* Selang-seling warna kartu hobi */
+        .hobby-item:nth-child(1) { background-color: #ff7675; }
+        .hobby-item:nth-child(2) { background-color: #74b9ff; }
+
+        .hobby-item:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 7px 7px 0px #000;
+        }
+
+        .hobby-item .icon {
+            font-size: 3rem;
+            display: block;
+            margin-bottom: 15px;
+            text-shadow: 3px 3px 0px #000;
+        }
+
+        .hobby-item h3 {
+            font-size: 1.3rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #fff;
+            text-shadow: 2px 2px 0px #000;
+        }
+
+        /* GALLERY GRID */
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 25px;
+        }
+
+        .gallery-item {
+            border: 4px solid #000;
+            border-radius: 12px;
+            overflow: hidden;
+            aspect-ratio: 4 / 3;
+            box-shadow: 6px 6px 0px #000;
+            background-color: #fff;
+            transition: all 0.2s ease;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        /* Efek interaksi pop-out galeri saat di-hover */
+        .gallery-item:hover {
+            transform: scale(1.02) translate(-3px, -3px);
+            box-shadow: 9px 9px 0px #000;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: #ffeaa7; /* Kuning cerah */
+            border: 4px solid #000;
+            border-radius: 16px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 8px 8px 0px #000;
+            margin-top: 40px;
+        }
+
+        footer p {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        footer a {
+            display: inline-block;
+            background-color: #ff7675;
+            color: white;
+            padding: 8px 20px;
+            border: 3px solid #000;
+            text-decoration: none;
+            box-shadow: 4px 4px 0px #000;
+            font-weight: bold;
+            border-radius: 8px;
+            transition: all 0.1s;
+        }
+
+        footer a:hover {
+            background-color: #fff;
+            color: #000;
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0px #000;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 600px) {
+            .hero-section h1 { font-size: 2rem; }
+            .brutal-card { padding: 20px; }
+            .about-content { gap: 30px; justify-content: center; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <header class="hero-section">
+            <div class="hero-content">
+                <h1>Marchella Diva Gantari</h1>
+                <p>Web Developer Enthusiast</p>
+            </div>
+        </header>
+        
+        <section class="brutal-card about-section">
+            <h2>Tentang Saya</h2>
+            <div class="about-content">
+                <div class="profile-wrapper">
+                    <img src="https://i.pinimg.com/736x/dc/2e/3d/dc2e3d79cf5397d9bd7ab6c5932ae7a9.jpg" alt="Marchella Diva" class="profile-img">
+                </div>
+                <div class="about-text">
+                    <p>
+                        Halo! Saya adalah seorang mahasiswa asal kota <strong>Kotabaru</strong> yang saat ini sedang menempuh pendidikan di <strong>UNISKA Banjarmasin</strong>. 
+                        Saya memiliki semangat yang berapi-api untuk mendalami web development dari nol dan merancang desain web yang ekspresif serta penuh warna!
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="brutal-card hobby-section">
+            <h2>Hobi & Minat</h2>
+            <div class="hobby-grid">
+                <div class="hobby-item">
+                    <span class="icon">✈️</span>
+                    <h3>Jalan-Jalan</h3>
+                </div>
+                <div class="hobby-item">
+                    <span class="icon">🏃‍♀️</span>
+                    <h3>Olahraga</h3>
+                </div>
+            </div>
+        </section>
+
+        <section class="brutal-card gallery-section">
+            <h2>Galeri Karya</h2>
+            <div class="gallery-container">
+                <div class="gallery-item"><img src="foto 1.jpg" alt="Karya 1"></div>
+                <div class="gallery-item"><img src="foto 2.jpg" alt="Karya 2"></div>
+                <div class="gallery-item"><img src="foto 3.jpg" alt="Karya 3"></div>
+                <div class="gallery-item"><img src="foto 4.jpg" alt="Karya 4"></div>
+                <div class="gallery-item"><img src="foto 5.jpg" alt="Karya 5"></div>
+                <div class="gallery-item"><img src="foto 6.jpg" alt="Karya 6"></div>
+            </div>
+        </section>
+
+        <footer>
+            <p>Hubungi saya di Instagram:</p>
+            <a href="https://www.instagram.com/divagantari?igsh=c243bm4wMnVhajF1" target="_blank" rel="noopener noreferrer">@dipaa.aaaa</a>
+            <p style="margin-top: 15px; font-size: 0.9rem; font-weight: 400; color: #555;">&copy; 2026 Marchella Diva Gantari. Built with Pop Energy.</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
